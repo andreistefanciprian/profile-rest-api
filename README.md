@@ -1,4 +1,4 @@
-# Create and manage project environment
+## Create and manage project environment
 
 ```bash
 # Create virtualenv
@@ -12,13 +12,21 @@ deactivate
 
 ```
 
-# Install requirements
+## Install requirements
 
 ```bash
 pip install -r requirmeents.txt
 ```
 
-# Create django project&app
+
+## Start django app
+
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
+
+## Create django project&app
+
 ```bash
 # Create django project
 django-admin.py startproject profiles_project .
