@@ -11,3 +11,18 @@ source profiles-rest-api/bin/activate
 deactivate
 
 ```
+
+# Install requirements
+
+```bash
+pip install -r requirmeents.txt
+```
+
+# Create django project&app
+```bash
+# Create django project
+django-admin.py startproject profiles_project .
+# Create django app
+python manage.py startapp profiles_api
+
+```
