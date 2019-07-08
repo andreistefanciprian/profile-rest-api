@@ -34,3 +34,10 @@ django-admin.py startproject profiles_project .
 python manage.py startapp profiles_api
 
 ```
+
+## Create and run migrations
+```bash
+python manage.py makemigrations profiles_api
+python manage.py migrate
+
+```
