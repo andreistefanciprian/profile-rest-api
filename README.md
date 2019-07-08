@@ -39,5 +39,9 @@ python manage.py startapp profiles_api
 ```bash
 python manage.py makemigrations profiles_api
 python manage.py migrate
+```
 
+## Create usperuser
+```bash
+python manage.py createsuperuser
 ```
