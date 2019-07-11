@@ -11,6 +11,19 @@ from profiles_api import permissions
 from profiles_api import serializers, models
 
 
+class UserProfileFeedViewSet(viewsets.ModelViewSet):
+    """Handles creating, reading and updating profile feed items"""
+    authentication_classes = (TokenAuthentication,)
+    serializer_class = serializers.ProfileFeedItemSerializer
+    queryset = models.ProfileFeedItem.objects.all()
+
+    # display 'user_profile' as read only
+    # gets called everytime you do an HTTP POST
+    def perform_create(self, serializer):
+        """Sets the user profile to the logged in user"""
+        serializer.save(user_profile=self.request.user)
+
+
 class UserProfileViewSet(viewsets.ModelViewSet):
     """Create and Update profiles"""
     serializer_class = serializers.UserProfileSerializer
