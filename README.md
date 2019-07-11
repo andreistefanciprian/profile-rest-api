@@ -39,6 +39,10 @@ python manage.py startapp profiles_api
 ```bash
 python manage.py makemigrations profiles_api
 python manage.py migrate
+
+# After adding new model to profiles_api app
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ## Create usperuser
