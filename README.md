@@ -1,3 +1,16 @@
+# How to deploy this project in GCP
+```bash
+# deploy this project in GCP (make sure ssh pub key present on GCP machine root user is also added to github)
+curl -sL https://raw.githubusercontent.com/andreistefanciprian/profile-rest-api/master/cloud_aws/setup.sh?token=AGXEMXUHZ565DK4LT3YDYSS5GGPXK | sudo bash -
+
+# Later updates if code changed after app install
+sudo sh ./deploy/update.sh
+
+# create superuser
+sudo env/bin/python manage.py createsuperuser
+```
+
+# Ignore steps below as they are covered by deploy scripts
 ## Create and manage project environment
 
 ```bash
@@ -49,3 +62,4 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
+
