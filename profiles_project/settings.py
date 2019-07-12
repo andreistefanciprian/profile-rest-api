@@ -26,7 +26,7 @@ SECRET_KEY = 'e4r%o+##2+dr1^!r)&mr0jku(=#u#@6v@!x2go7qi@kxy&3$*l'
 # DEBUG = True
 DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
