@@ -1,13 +1,14 @@
 from django.shortcuts import render
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, viewsets, filters
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from profiles_api import permissions
-
 from profiles_api import serializers, models
 
 
@@ -16,6 +17,10 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.ProfileFeedItemSerializer
     queryset = models.ProfileFeedItem.objects.all()
+    permission_classes = (
+        permissions.UpdateOwnStatus,
+        IsAuthenticatedOrReadOnly
+    )
 
     # display 'user_profile' as read only
     # gets called everytime you do an HTTP POST
