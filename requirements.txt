@@ -2,4 +2,4 @@
 django==2.2
 
 # Django REST framework
-djangorestframework==3.9.2
+djangorestframework==3.11.2
